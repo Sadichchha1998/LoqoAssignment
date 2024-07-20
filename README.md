@@ -62,6 +62,7 @@ src
 │   │               └── ProductApiApplication.java
 │   └── resources
 │       └── application.properties
+
 └── test
 └── java
 └── com
