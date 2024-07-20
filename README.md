@@ -36,39 +36,28 @@ Query Parameters:
 ## Sample Requests
 
 1. Get all products:
-GET
+
+
+
  http://localhost:8080/products
+
+ 
 2. Filter by category and price range, sort by price ascending:
+
+
+
  http://localhost:8080/products?category=electronics&minPrice=100&maxPrice=1000&sortField=price&sortOrder=asc
+
+
+
 3. Filter in-stock items, sort by rating descending:
+
+
+
  http://localhost:8080/products?inStock=true&sortField=rating&sortOrder=desc
 ## Project Structure
-src
-├── main
-│   ├── java
-│   │   └── com
-│   │       └── loqo
-│   │           └── productapi
-│   │               ├── config
-│   │               │   └── DataLoader.java
-│   │               ├── controller
-│   │               │   └── ProductController.java
-│   │               ├── model
-│   │               │   └── Product.java
-│   │               ├── repository
-│   │               │   └── ProductRepository.java
-│   │               ├── service
-│   │               │   └── ProductService.java
-│   │               └── ProductApiApplication.java
-│   └── resources
-│       └── application.properties
 
-└── test
-└── java
-└── com
-└── loqo
-└── productapi
-└── ProductApiApplicationTests.java
+![image](https://github.com/user-attachments/assets/40611a32-ce18-46c6-a46a-491d79aa1edf)
 
 ## Technologies Used
 
