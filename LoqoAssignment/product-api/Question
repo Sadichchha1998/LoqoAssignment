@@ -1,0 +1,101 @@
+Assignment Question: Building a Filter and Sort API with Spring Boot and MongoDB
+Objective
+Create a Spring Boot application that interacts with a MongoDB database to provide an API that filters and sorts records based on specified parameters.
+
+Problem Statement
+Develop a RESTful API that fetches Product details from a MongoDB collection. The API should support filtering based on specific fields and sorting based on three designated fields.
+
+Specifications:
+1. Setup
+  - Use Spring Boot to create the application.
+  - Use MongoDB as the database.
+
+2. MongoDB Collection
+Assume you have a MongoDB collection named products with the following structure:
+{
+  "_id": "ObjectId",
+  "name": "string",
+  "category": "string",
+  "price": "double",
+  "inStock": "boolean",
+  "rating": "double",
+  "createdAt": "Date"
+}
+
+3. Filtering
+The API should allow filtering on the following fields:
+  - category: Filter products by category.
+  - price: Filter products within a price range (minimum and maximum).
+  - inStock: Filter products based on their stock availability.
+
+4. Sorting
+The API should support sorting based on the following fields:
+  - price
+  - rating
+  - createdAt
+The sort order can be asc or desc.
+
+5. API Endpoint
+Create an endpoint /products which accepts the following query parameters for filtering and sorting:
+
+category (optional): Filter by category.
+minPrice and maxPrice (optional): Filter by price range.
+inStock (optional): Filter by stock availability.
+sortField (optional): The field to sort by (one of price, rating, createdAt).
+sortOrder (optional): The sort order (asc or desc). Default is asc.
+
+Example
+Request:
+GET /products?category=electronics&minPrice=100&maxPrice=1000&inStock=true&sortField=price&sortOrder=asc
+Response:
+[
+  {
+    "_id": "60c72b2f5f1b2c001c8d4a2a",
+    "name": "Smartphone",
+    "category": "electronics",
+    "price": 299.99,
+    "inStock": true,
+    "rating": 4.5,
+    "createdAt": "2023-01-15T12:00:00Z"
+  },
+  {
+    "_id": "60c72b2f5f1b2c001c8d4a2b",
+    "name": "Laptop",
+    "category": "electronics",
+    "price": 899.99,
+    "inStock": true,
+    "rating": 4.7,
+    "createdAt": "2023-03-20T08:30:00Z"
+  }
+]
+
+Assignment Tasks
+Create Spring Boot Application:
+  Set up a new Spring Boot project with dependencies for MongoDB.
+Define Product Model:
+  Create a Java class Product representing the product schema.
+Repository Layer:
+  Create a repository interface ProductRepository extending MongoRepository.
+Service Layer:
+  Implement a service class ProductService to handle business logic for filtering and sorting.
+Controller Layer:
+  Implement a REST controller ProductController with an endpoint /products.
+Query Handling:
+  Implement the logic to handle filtering and sorting based on query parameters.
+Testing:
+  Write unit tests to verify the functionality of your filtering and sorting logic.
+
+Submit the following:
+  - The complete source code of the Spring Boot application on git repo.
+  - Instructions on how to run the application.
+  - Sample requests and responses demonstrating the filtering and sorting functionality.
+
+Tips
+  - Ensure your code is well-documented and follows best practices.
+  - Keep the code simple and well-organized to demonstrate understanding of basic concepts.
+  - Focus on writing clear and maintainable code.
+  - Include comments explaining the purpose of key sections of the code.
+  - Provide a brief explanation of your approach and any challenges faced during development.
+
+
+
